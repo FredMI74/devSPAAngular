@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'spa-root',
+  selector: 'hb3-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
