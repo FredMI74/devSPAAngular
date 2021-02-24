@@ -1,1 +1,11 @@
-<button mat-raised-button color="primary" (click)="btnHistoryClick();">Histórico de Preços</button>
+<div class="select-container">
+    <mat-form-field appearance="fill" class="select-paper">
+        <mat-label>Selecione uma ação</mat-label>
+        <mat-select #paper>
+            <ng-container *ngFor="let p of paper_list">
+                <mat-option [value]="p">{{ p }}</mat-option>
+            </ng-container>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="btnHistoryClick(paper.value);">Histórico de Preços</button>
+</div>
