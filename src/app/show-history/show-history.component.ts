@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'hb3-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'hb3-show-history',
+  templateUrl: './show-history.component.html',
+  styleUrls: ['./show-history.component.css']
 })
-export class HomeComponent implements OnInit {
+export class ShowHistoryComponent implements OnInit {
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-  
-  btnGoClick=  () => {
+
+  btnGoSelectClick=  () => {
     this.router.navigateByUrl('/select');
 };
 
