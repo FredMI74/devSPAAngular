@@ -1,18 +1,21 @@
-<div class="table-container">
-    <table mat-table [dataSource]="paper_list">
-        <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef>Data </th>
-            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
-        </ng-container>
+<div class="history-container">
+    <div class="table-container">
+        <table mat-table [dataSource]="paper_list" *ngIf="data_ok">
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef>Data </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
 
-        <ng-container matColumnDef="value">
-            <th mat-header-cell *matHeaderCellDef>Valor </th>
-            <td mat-cell *matCellDef="let element"> {{element.value}} </td>
-        </ng-container>
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef>Valor </th>
+                <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+            </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <h3 *ngIf="!data_ok">Esta ação não possui dados</h3>
+    <br>
+    <button mat-raised-button color="primary" (click)="btnGoSelectClick();">Consultar outra Ação</button>
 </div>
-
-<button mat-raised-button color="primary" (click)="btnGoSelectClick();">Consultar outra Ação</button>

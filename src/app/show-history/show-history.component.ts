@@ -11,6 +11,7 @@ import { history_data } from './history-data';
 
 export class ShowHistoryComponent implements OnInit {
  
+  data_ok: boolean = true;
   paper!: string;
   paper_list: history_data[] =[];
   displayedColumns: string[] = ['date', 'value'];
@@ -32,6 +33,7 @@ export class ShowHistoryComponent implements OnInit {
             this.paper_list.push(new history_data(line.substring(0, 10),line.substring(15, 20)));  
           }
         }
+        this.data_ok = this.paper_list[0].value != '00.00';
         this.paper_list = Array.from(new Set(this.paper_list));
       });
     });

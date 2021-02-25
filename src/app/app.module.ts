@@ -12,7 +12,7 @@ import { ShowHistoryComponent } from './show-history/show-history.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import  {MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
